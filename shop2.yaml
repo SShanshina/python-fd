@@ -1,0 +1,88 @@
+shop: DNS
+categories:
+  - id: 224
+    name: Смартфоны
+  - id: 15
+    name: Аксессуары
+  - id: 1
+    name: Flash-накопители
+  - id: 20
+    name: Ноутбуки
+  - id: 2
+    name: Телевизоры
+  - id: 5
+    name: Бытовая техника
+
+goods:
+  - id: 55295159
+    category: 2
+    model: dexp/h24f7000e
+    name: Телевизор LED DEXP (чёрный)
+    price: 6999
+    price_rrc: 7899
+    quantity: 120
+    parameters:
+      "Диагональ (дюйм)": 24
+      "Разрешение (пикс)": 1366x768
+      "Цвет": чёрный
+  - id: 52151905
+    category: 20
+    model: irbis/nb77
+    name: Ноутбук Irbis NB77 (чёрный)
+    price: 12499
+    price_rrc: 13999
+    quantity: 12
+    parameters:
+      "Диагональ (дюйм)": 13.3
+      "Разрешение (пикс)": 1366x768
+      "Встроенная память (Гб)": 32
+      "Цвет": чёрный
+  - id: 50951985
+    category: 224
+    model: apple/iphone/xr
+    name: Смартфон Apple iPhone XR 256GB (черный)
+    price: 72000
+    price_rrc: 69990
+    quantity: 90
+    parameters:
+      "Диагональ (дюйм)": 6.1
+      "Разрешение (пикс)": 1792x828
+      "Встроенная память (Гб)": 256
+      "Цвет": черный
+  - id: 51941481
+    category: 224
+    model: samsung/galaxy/m53
+    name: Смартфон Samsung Galaxy M53 (синий)
+    price: 40299
+    price_rrc: 42990
+    quantity: 19
+    parameters:
+      "Диагональ (дюйм)": 6.7
+      "Разрешение (пикс)": 2400x1080
+      "Встроенная память (Гб)": 256
+      "Цвет": синий
+  - id: 51591905
+    category: 1
+    model: kingston/dt100g3
+    name: USB Flash Kingston DataTraveler 64GB
+    price: 950
+    price_rrc: 990
+    quantity: 32
+    parameters:
+      "Цвет": чёрный
+      "Интерфейс подключения": USB Type-A
+      "Объём памяти (Гб)": 64
+      "Конструкция корпуса": выдвижной (слайдер)
+  - id: 51095019
+    category: 5
+    model: dexp/wm-f510stl/ww
+    name: Стиральная машина DEXP (белый)
+    price: 16999
+    price_rrc: 17500
+    quantity: 11
+    parameters:
+      "Цвет": белый
+      "Ширина (см)": 59.5
+      "Высота (см)": 85
+      "Глубина (см)": 47
+      "Вес (кг)": 53

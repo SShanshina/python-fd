@@ -1,0 +1,219 @@
+###
+# list of products in a spesified category of a specified shop
+GET http://127.0.0.1:8000/api/products_info/?shop_id=1&category_id=224
+
+###
+# list of shops
+GET http://127.0.0.1:8000/api/shops/
+
+###
+# list of categories
+GET http://127.0.0.1:8000/api/categories/
+
+###
+# list of products
+GET http://127.0.0.1:8000/api/products/
+
+###
+# sign up customer
+POST http://127.0.0.1:8000/api/sign_up/
+Content-Type: application/json
+
+{
+  "first_name": "Will",
+  "middle_name": "J.",
+  "last_name": "Herondale",
+  "username": "w.herondale",
+  "email": "w.herondale@example.org",
+  "password": "j1fkj1ljmfl1k",
+  "company": "London Institute",
+  "position": "The Head of Institute",
+  "type": "customer"
+}
+
+###
+# login customer
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+  "username": "w.herondale",
+  "password": "j1fkj1ljmfl1k"
+}
+
+###
+# sign up shop manager
+POST http://127.0.0.1:8000/api/sign_up/
+Content-Type: application/json
+
+{
+  "first_name": "Emma",
+  "middle_name": "J.",
+  "last_name": "Carstairs",
+  "username": "e.carstairs",
+  "email": "e.carstairs@example.org",
+  "password": "ksjfnaka1jnakf9",
+  "company": "Los Angeles Institute",
+  "position": "Manager",
+  "type": "shop"
+}
+
+###
+# login shop manager
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+  "username": "e.carstairs",
+  "password": "ksjfnaka1jnakf9"
+}
+
+###
+# user info
+GET http://127.0.0.1:8000/api/user/
+Authorization: Token 421f5737e2c5cf9a8e5f757f475b475033af29b5
+
+###
+# change user info
+POST http://127.0.0.1:8000/api/user/
+Authorization: Token 421f5737e2c5cf9a8e5f757f475b475033af29b5
+Content-Type: application/json
+
+{
+  "password": "fjoajf12adaljlk1"
+}
+
+###
+# list of items in basket
+GET http://127.0.0.1:8000/api/basket/
+Authorization: Token 712fccb84764f195603fb2ab656b8cf3b06d0170
+
+###
+# add items to basket
+POST http://127.0.0.1:8000/api/basket/
+Authorization: Token 712fccb84764f195603fb2ab656b8cf3b06d0170
+Content-Type: application/json
+
+{"order_items":
+    [
+        {
+            "product_info": 89,
+            "shop": 2,
+            "quantity": 1
+        },
+        {
+            "product_info": 93,
+            "shop": 1,
+            "quantity": 1
+        }
+    ]
+}
+
+###
+# delete an item from the basket
+DELETE http://127.0.0.1:8000/api/basket/?id=1
+Authorization: Token 712fccb84764f195603fb2ab656b8cf3b06d0170
+
+###
+# change the quantity of an item in the basket
+PUT http://127.0.0.1:8000/api/basket/?id=2
+Authorization: Token 712fccb84764f195603fb2ab656b8cf3b06d0170
+Content-Type: application/json
+
+{"update_data":
+	{"quantity": 1}
+}
+
+###
+# list of orders
+GET http://127.0.0.1:8000/api/orders/
+Authorization: Token 712fccb84764f195603fb2ab656b8cf3b06d0170
+
+###
+# add a new order from the basket
+POST http://127.0.0.1:8000/api/orders/
+Authorization: Token 712fccb84764f195603fb2ab656b8cf3b06d0170
+Content-Type: application/json
+
+{
+  "contact_id": 3,
+  "order_id": 9
+}
+
+###
+# list of contacts of a user
+GET http://127.0.0.1:8000/api/contacts/
+Authorization: Token 421f5737e2c5cf9a8e5f757f475b475033af29b5
+
+###
+# add a new contact
+POST http://127.0.0.1:8000/api/contacts/
+Authorization: Token 421f5737e2c5cf9a8e5f757f475b475033af29b5
+Content-Type: application/json
+
+{
+  "phone": "79231245810",
+  "country": "Wales",
+  "city": "Cardiff",
+  "street": "Valley Street",
+  "building": 10
+}
+
+###
+# delete a contact of a user
+DELETE http://127.0.0.1:8000/api/contacts/?id=6
+Authorization: Token 421f5737e2c5cf9a8e5f757f475b475033af29b5
+
+###
+# change a contact of a user
+PUT http://127.0.0.1:8000/api/contacts/?id=5
+Authorization: Token 421f5737e2c5cf9a8e5f757f475b475033af29b5
+Content-Type: application/json
+
+{
+  "phone": "79231245811",
+  "country": "Wales",
+  "city": "Cardiff",
+  "street": "Valley Street",
+  "building": 19
+}
+
+###
+# shop1 update (for partners)
+POST http://127.0.0.1:8000/api/shop/update/
+Authorization: Token e81e1385e8db308324b5ff971dc11bdbae898821
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="update_file"; filename="shop1.yaml"
+
+< ./shop1.yaml
+
+###
+# shop2 update (for partners)
+POST http://127.0.0.1:8000/api/shop/update/
+Authorization: Token e81e1385e8db308324b5ff971dc11bdbae898821
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="update_file"; filename="shop2.yaml"
+
+< ./shop2.yaml
+
+###
+# list of orders (for partners)
+GET http://127.0.0.1:8000/api/shop/orders/?shop_id=1
+Authorization: Token e81e1385e8db308324b5ff971dc11bdbae898821
+
+###
+# check status of the shops related to a specified manager by token (for partners)
+GET http://127.0.0.1:8000/api/shop/status/
+Authorization: Token e81e1385e8db308324b5ff971dc11bdbae898821
+
+###
+# change status of a shop (for partners)
+POST http://127.0.0.1:8000/api/shop/status/?shop_id=2
+Authorization: Token e81e1385e8db308324b5ff971dc11bdbae898821
+Content-Type: application/json
+
+{"status": "False"}
